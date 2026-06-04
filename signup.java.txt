@@ -1,0 +1,60 @@
+package com.example.myproject;
+
+import android.os.Bundle;
+import android.view.WindowManager;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myproject.databinding.ActivitySignup2Binding;
+
+public class SignupActivity2 extends AppCompatActivity {
+
+    ActivitySignup2Binding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+
+        binding = ActivitySignup2Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
+
+        // ✅ FIXED BUTTON NAME (signupButton)
+        binding.signupButton.setOnClickListener(view -> {
+
+            String name = binding.nameEdit.getText().toString().trim();
+            String email = binding.emailEdit.getText().toString().trim();
+            String password = binding.passwordEdit.getText().toString().trim();
+            String rePassword = binding.repasswordEdit.getText().toString().trim();
+
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || rePassword.isEmpty()) {
+                Toast.makeText(SignupActivity2.this,
+                        "Please fill all fields",
+                        Toast.LENGTH_SHORT).show();
+            }
+            else if (!password.equals(rePassword)) {
+                Toast.makeText(SignupActivity2.this,
+                        "Passwords do not match ❌",
+                        Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(SignupActivity2.this,
+                        "Record Inserted Successfully ✅",
+                        Toast.LENGTH_SHORT).show();
+
+                // clear fields
+                binding.nameEdit.setText("");
+                binding.emailEdit.setText("");
+                binding.passwordEdit.setText("");
+                binding.repasswordEdit.setText("");
+            }
+        });
+    }
+}.com
