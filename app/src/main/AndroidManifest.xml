@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyProject">
+        <activity
+            android:name=".GroupChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SecureGroupSummaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupSummaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PenaltyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SmartContractActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroupManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_group_management"
+            android:exported="false" />
+        <activity
+            android:name=".PanaltyActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity2"
+            android:exported="false" /> <!-- Splash SCREEN (NOW LAUNCHER) -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".SignupActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".HomePageActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".pageActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".new_GroupActivity2"
+            android:exported="false" />
+    </application>
+
+</manifest>
